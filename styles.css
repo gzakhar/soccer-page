@@ -1,0 +1,218 @@
+/* =========================================================
+   Croton Soccer League — forked from the styles.css at
+   github.com/gzakhar/gzakharov to keep the same clean,
+   minimal, dependency-free feel (Open Sans, #111 on #fff,
+   gradient-underline links, letter-spaced section heads).
+   ========================================================= */
+
+:root {
+    /* -----------------------------------------------------
+       Accent color — used for links, the hero rule, and the
+       fact chips. Default is grass green. Swap this one value
+       to re-theme the whole site. Other options that work:
+         pitch teal    #0d7d74
+         classic navy  #1f3a8a
+         clay orange   #c2410c
+       ----------------------------------------------------- */
+    --accent: #1a7a3c;
+    --accent-soft: color-mix(in srgb, var(--accent) 10%, #fff);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #111;
+    background: #fff;
+    line-height: 1.7;
+    font-size: 15px;
+    padding: 0 100px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (max-width: 650px) {
+    body {
+        padding: 0 24px 40px;
+    }
+}
+
+/* Links: the signature gradient-underline slide, but the
+   fill is the accent color instead of #111. */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    background-image:
+        linear-gradient(var(--accent), var(--accent)),
+        linear-gradient(#ccc, #ccc);
+    background-size: 0 0.1em, 100% 0.1em;
+    background-position: 0 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+
+a:hover,
+a:focus {
+    background-size: 100% 0.1em, 100% 0.1em;
+}
+
+/* -- Section headings (uppercase, letter-spaced) -- */
+
+h2 {
+    font-size: 1.1em;
+    font-weight: 700;
+    padding: 44px 0 16px;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* -- Hero -- */
+
+.hero {
+    padding: 64px 0 28px;
+    border-bottom: 2px solid var(--accent);
+}
+
+.hero .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.78em;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.hero .tagline {
+    font-size: 1.15em;
+    color: #444;
+    max-width: 560px;
+}
+
+@media (max-width: 450px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+}
+
+/* -- Prose blocks (the "what it is" section) -- */
+
+.prose {
+    color: #333;
+    max-width: 620px;
+}
+
+.prose p {
+    margin-bottom: 16px;
+}
+
+/* -- Quick facts row (chips under the hero) -- */
+
+.facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 22px 0 4px;
+}
+
+.fact {
+    font-size: 0.82em;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid color-mix(in srgb, var(--accent) 22%, #fff);
+    border-radius: 20px;
+    padding: 6px 14px;
+    background-image: none;
+}
+
+/* -- Info cards (location + schedule) -- */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 560px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.info-card {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 22px 24px;
+}
+
+.info-card .label {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.72em;
+    font-weight: 700;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.info-card .value {
+    font-size: 1.15em;
+    font-weight: 700;
+    color: #111;
+}
+
+.info-card .detail {
+    color: #555;
+    margin-top: 4px;
+    font-size: 0.95em;
+}
+
+/* -- Responsive map embed (keeps 16:9 on any width) -- */
+
+.map-embed {
+    margin-top: 22px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    aspect-ratio: 16 / 9;
+}
+
+.map-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* -- Page footer (matches the reference) -- */
+
+.page-footer {
+    margin-top: 60px;
+    padding-top: 22px;
+    border-top: 1px solid #eee;
+    font-size: 0.85em;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 22px;
+    margin-bottom: 8px;
+}
+
+.footer-note {
+    color: #999;
+}

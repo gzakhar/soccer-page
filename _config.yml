@@ -1,0 +1,13 @@
+title: Croton Soccer League
+description: A post-college soccer league in Croton-on-Hudson, NY — open to anyone 18 and over.
+
+# GitHub Pages serves project sites at https://<user>.github.io/<repo>/
+# so every internal link/asset must be prefixed with this baseurl.
+# If you later point a custom domain (e.g. crotonsoccer.com) at the repo,
+# set this back to "" (empty string).
+baseurl: "/soccer-page"
+
+# Files that shouldn't end up in the built _site output
+exclude:
+  - README.md
+  - .gitignore
